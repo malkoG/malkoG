@@ -13,6 +13,8 @@
 * [Facebook](https://fb.com/kodingwarrior)
 * [Twitter](https://twitter.com/kodingwarrior)
 
-<div style="text-align: center">
+<p align="center">
+
 [![solved.ac tier](http://mazassumnida.wtf/api/generate_badge?boj=malkoring)](https://solved.ac/malkoring)
-</div>
+
+</p>
