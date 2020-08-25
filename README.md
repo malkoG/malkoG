@@ -14,5 +14,5 @@
 * [Twitter](https://twitter.com/kodingwarrior)
 
 <center>
-[![solved.ac tier](http://mazassumnida.wtf/api/generate_badge?boj=malkoring) ](https://solved.ac/malkoring)
+![solved.ac tier](http://mazassumnida.wtf/api/generate_badge?boj=malkoring)
  </center>
