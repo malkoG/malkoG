@@ -21,7 +21,7 @@
   </a>
   <a href="https://www.codewars.com/users/kodingwarrior">
   
-    ![Codewars Profile](https://www.codewars.com/users/kodingwarrior/badges/large)
+   ![Codewars Profile](https://www.codewars.com/users/kodingwarrior/badges/large)
     
   </a>
 </p>
