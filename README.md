@@ -24,4 +24,7 @@
    ![Codewars Profile](https://www.codewars.com/users/kodingwarrior/badges/large)
     
   </a>
+  
+  ![solved.ac tier](http://mazassumnida.wtf/api/v2/generate_badge?boj=malkoring)
+
 </p>
