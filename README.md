@@ -1,7 +1,7 @@
 ### Skills
 
-* language : Ruby, Python, Typescript
-* frameworks : Rails, Django, React, Vue
+* language : Ruby, Python, Typescript, Dart
+* frameworks : Rails, Django, React, Vue, Flutter
 
 ### Problem Solving
 
