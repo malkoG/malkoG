@@ -3,6 +3,7 @@
 * Neovim enthusiast since 2022. Oct.
 * Résistance against Republic of Java
 * Yak-shaving maniac
+* "WTF is that, nerd?" expert
 * author of [mastodon.nvim](https://github.com/kode-team/mastodon.nvim)
 
 ### Skills
