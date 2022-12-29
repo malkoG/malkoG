@@ -6,6 +6,8 @@
 * "WTF is that, nerd?" expert
 * author of [mastodon.nvim](https://github.com/kode-team/mastodon.nvim)
 
+[![Star History Chart](https://api.star-history.com/svg?repos=kode-team/mastodon.nvim&type=Date)](https://star-history.com/#kode-team/mastodon.nvim&Date)
+
 ### Skills
 
 * language : Ruby, Python, Typescript, Dart
