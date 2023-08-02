@@ -5,7 +5,7 @@
 * Yak-shaving maniac
 * "WTF is that, nerd?" expert
 * author of [mastodon.nvim](https://github.com/kode-team/mastodon.nvim), [aladin.nvim](https://github.com/malkoG/aladin.nvim), [vault.nvim](https://github.com/kode-team/vault.nvim)
-* I am developing [Balpan CLI](https://github.com/balpan-rs/balpan), now.
+* I am working on [Balpan CLI](https://github.com/balpan-rs/balpan), now.
 
 [![Star History Chart](https://api.star-history.com/svg?repos=kode-team/mastodon.nvim,balpan-rs/balpan&type=Date)](https://star-history.com/#kode-team/mastodon.nvim&balpan-rs/balpan&Date)
 
