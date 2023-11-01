@@ -1,6 +1,6 @@
 ## About me
 
-* Neovim enthusiast since 2022. Oct.
+* Neovim enthusiast since 2022. Oct. (and moderator of [vim.kr](https://vim.kr))
 * Résistance against Republic of Java
 * Yak-shaving maniac
 * "WTF is that, nerd?" expert
