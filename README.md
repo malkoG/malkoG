@@ -1,4 +1,4 @@
-![fediverse](https://fedi-badge.deno.dev/@kodingwarrior@silicon.moe/followers.svg)
+[![fediverse](https://fedi-badge.deno.dev/@kodingwarrior@silicon.moe/followers.svg)](https://social.silicon.moe/@kodingwarrior)
 
 ## About me
 
