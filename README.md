@@ -1,5 +1,7 @@
 [![fediverse](https://fedi-badge.deno.dev/@kodingwarrior@silicon.moe/followers.svg)](https://social.silicon.moe/@kodingwarrior)
 
+<figure><embed src="https://wakatime.com/share/@kodingwarrior/5e8ceaa4-59fb-4530-b82e-da4b543688e4.svg"></embed></figure>
+
 ## About me
 
 * Neovim enthusiast since 2022. Oct. (and moderator of [vim.kr](https://vim.kr))
