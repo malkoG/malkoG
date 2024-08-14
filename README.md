@@ -1,6 +1,6 @@
 [![fediverse](https://fedi-badge.deno.dev/@kodingwarrior@silicon.moe/followers.svg)](https://social.silicon.moe/@kodingwarrior)
 
-<a href="https://wakatime.com"><img src="https://wakatime.com/share/@kodingwarrior/e69c0547-4e74-4247-bdf9-b2e9c4d19aed.png" /></a>
+<a href="https://wakatime.com"><img src="https://wakatime.com/share/@kodingwarrior/745e9591-a178-41cf-9fd8-9e9c15e95ac2.png" /></a>
 
 ## About me
 
