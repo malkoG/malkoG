@@ -1,3 +1,4 @@
+[![fediverse](https://fedi-badge.deno.dev/@kodingwarrior@hackers.pub/followers.svg)](https://hackers.pub/@kodingwarrior)
 [![fediverse](https://fedi-badge.deno.dev/@kodingwarrior@silicon.moe/followers.svg)](https://social.silicon.moe/@kodingwarrior)
 
 <a href="https://wakatime.com"><img src="https://wakatime.com/share/@kodingwarrior/dc9cc472-a026-4af0-af2c-fccae474b1b6.png" /></a>
