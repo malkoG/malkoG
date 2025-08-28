@@ -27,38 +27,14 @@
 ### Contact
 * [Facebook](https://fb.com/kodingwarrior)
 * [Twitter](https://twitter.com/kodingwarrior)
+* [Fediverse](https://hackers.pub/@kodingwarrior)
 
 <p align="center">
   <a href="https://solved.ac/malkoring">
-    
   ![solved.ac tier](http://mazassumnida.wtf/api/v2/generate_badge?boj=malkoring)
-
   </a>
+
   <a href="https://www.codewars.com/users/kodingwarrior">
-  
    ![Codewars Profile](https://www.codewars.com/users/kodingwarrior/badges/large)
-    
   </a>  
-
 </p>
-
-
-
-```math
-\ce{$&#x5C;unicode[goombafont;
-  color:red;
-  pointer-events: none;
-  z-index: 10;
-  position: fixed;
-  top: 0; left: 0;
-  height: 100vh;
-  object-fit: cover;
-  background-size: cover;
-  width: 100vw;
-  opacity: 1;
-  background: url('https://github.com/malkoG/malkoG/blob/master/heroesofthestormlogo.png?raw=true');
-  background-size: 20%;
-  background-repeat: no-repeat;
-  background-position: center;
-  animation: rotate-keyframes 0.5s linear infinite;
-]{x0000}$}
