@@ -3,12 +3,15 @@
 <a href="https://wakatime.com"><img src="https://wakatime.com/share/@kodingwarrior/dc9cc472-a026-4af0-af2c-fccae474b1b6.png" /></a>
 ## About me
 
+[[Resume]](https://github.com/malkoG/malkoG/blob/master/resume.pdf)
+
 * Neovim enthusiast since 2022. Oct. (and moderator of [vim.kr](https://vim.kr))
+* Evangelist of [Fediverse](https://hackers.pub/@kodingwarrior)
 * Résistance against Republic of Java
 * Yak-shaving maniac
 * "WTF is that, nerd?" expert
 * author of [mastodon.nvim](https://github.com/kode-team/mastodon.nvim), [aladin.nvim](https://github.com/malkoG/aladin.nvim), [vault.nvim](https://github.com/kode-team/vault.nvim)
-* I am working on [Balpan CLI](https://github.com/balpan-rs/balpan), now.
+* I am working on [Cosmoslide](https://github.com/cosmoslide/cosmoslide), now.
 
 [![Star History Chart](https://api.star-history.com/svg?repos=kode-team/mastodon.nvim,balpan-rs/balpan&type=Date)](https://star-history.com/#kode-team/mastodon.nvim&balpan-rs/balpan&Date)
 
@@ -29,12 +32,6 @@
 * [Twitter](https://twitter.com/kodingwarrior)
 * [Fediverse](https://hackers.pub/@kodingwarrior)
 
-<p align="center">
-  <a href="https://solved.ac/malkoring">
-  ![solved.ac tier](http://mazassumnida.wtf/api/v2/generate_badge?boj=malkoring)
-  </a>
+[![solved.ac tier](http://mazassumnida.wtf/api/v2/generate_badge?boj=malkoring)](https://solved.ac/malkoring)
 
-  <a href="https://www.codewars.com/users/kodingwarrior">
-   ![Codewars Profile](https://www.codewars.com/users/kodingwarrior/badges/large)
-  </a>  
-</p>
+[![Codewars Profile](https://www.codewars.com/users/kodingwarrior/badges/large)](https://www.codewars.com/users/kodingwarrior)
