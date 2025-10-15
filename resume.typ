@@ -8,53 +8,16 @@
 // ------------------------------------------------------------
 #let bullet-item(txt, indent-level: 0) = text(indent-level * "    " +  "• " + txt + "\n", size: 8pt)
 
-#let project-entry(title: "", timeframe: "", summary: "", body: "", techstack: "") = stack(
-  spacing: 8pt,
-  [#text(title, weight: "bold") #h(1fr) #text(techstack, style: "italic")],
-  text(timeframe, style: "italic", size: 8pt),
-  text(summary, size: 8pt),
-)
-
-#let contribution-entry(project, detail) = grid(
-  columns: (2.1fr, 6fr),
-  text(project, weight: "extrabold"),
-  text(detail, size: 8pt),
-)
-
-#let community-entry(role, timeframe, detail) = pad(grid(  
-  columns: (200pt, 4fr),
-  stack(
-    spacing: 8pt,
-    text(role, weight: "bold"),
-    text(timeframe, style: "italic", size: 8pt),
-  ), 
-  text(detail),
-), bottom: 4pt)
 
 #let work-entry(timeframe: "", title: "", organization: "", location: "", body) = {
   let header = stack(
     spacing: 8pt,
-    text(title, weight: "bold"),
-    text(organization, style: "italic", size: 8pt) + " / " +
-    text(timeframe + " · " + location, style: "italic", size: 8pt),
+    text(organization, weight: "bold") + text(" ") +
+    text(title, style: "italic", size: 9pt) + " / " +
+    text(timeframe + " · " + location, style: "italic", size: 9pt),
   )
   let desc = stack(body)
-  stack(spacing: 12pt, header, desc)
-}
-
-#let education-entry(major: "", institution: "", timeframe: "", body) = {
-  let header = stack(
-    spacing: 8pt,
-    text(institution + " / " + text(major, style: "italic", weight: "regular"), weight: "bold"),
-    text(timeframe, style: "italic", size: 8pt),
-  )
-  let details = stack(body, spacing: 2pt)
-  // stack(spacing: 16pt, header, details)
-  grid(
-    columns: (225pt, 5fr),
-    header,
-    details
-  )
+  stack(spacing: 10pt, header, desc)
 }
 
 // ------------------------------------------------------------
@@ -95,7 +58,7 @@
         set image(width: 8pt)
         contact-entry(github-icon, link("https://github.com/malkoG", "malkoG"))
         line(stroke: 0.1pt, length: 100%)
-        contact-entry(phone-icon,  link("tel:+82-xx-xxxx-xxxx", "xxx-xxxx-xxxx"))
+        contact-entry(phone-icon,  link("tel:+82-xx-xxx-xxxx", "xxx-xxxx-xxxx"))
         line(stroke: 0.1pt, length: 100%)
         contact-entry(email-icon,  link("mailto:jaeyeol.lee@hey.com", "jaeyeol.lee@hey.com"))
         line(stroke: 0.1pt, length: 100%)
@@ -159,17 +122,17 @@
       stack(
         spacing: 12pt,
         work-entry(
-          timeframe: "2022.10 – Present",
+          timeframe: "2022.12 – Present",
           title: "Software Engineer",
           organization: "Team Milestone",
           location: "Seoul",
           {
-            pad(text("아이디어를 제품으로 빠르게 전환하는 2인 풀스택 개발 에이전시 Team Milestone에서 근무했습니다.", size: 8pt), bottom: 2pt)
+            pad(text("아이디어를 제품으로 빠르게 전환하는 2인 풀스택 개발 에이전시 Team Milestone에서 근무했습니다.", size: 8pt), bottom: 0pt)
             pad(text("Ruby On Rails 기반의 소프트웨어 유지보수\n", weight: "light", size: 8pt), top: -0pt, bottom: 1pt)
             bullet-item("서울 소재 대학교 LMS 플랫폼(Canvas LMS 기반) 유지보수")
             bullet-item("유튜브 크리에이터 정산 관리 플랫폼 유지보수")
             bullet-item("헤이그라운드 대관 서비스 유지보수")
-            pad(text("Ruby On Rails/Flutter 기반의 소프트웨어 위탁개발\n", weight: "light", size: 8pt), top: 2pt, bottom: 1pt)
+            pad(text("Node.js/Ruby On Rails/Flutter 기반의 소프트웨어 위탁개발\n", weight: "light", size: 8pt), top: 2pt, bottom: 1pt)
             
             bullet-item("식단 관리를 위한 배달 앱 퍼블리싱")
             bullet-item("농수산물 이커머스 플랫폼 개발")
@@ -184,6 +147,28 @@
             bullet-item("운영환경 구축부터 배포까지 드는 시간을 5시간에서 1시간으로 개선", indent-level: 1)
             bullet-item("백오피스를 빠르게 구축하기 위한 DSL 기반의 라이브러리 자체 제작")
           },
+        ),
+
+        work-entry(
+          timeframe: "2022.02 - 2022.10",
+          title: "Software Engineer",
+          organization: "Makers The",
+          location: "Seoul",
+          {
+            pad(
+              text("미디어 콘텐츠 산업을 위한 솔루션을 개발하는 ", size: 8pt) +
+              text("Makers The", size: 8pt, weight: "black") +
+              text("에서 근무했으며, 주로 위탁 개발 중심의 프로젝트를 수행했습니다. 개발스택은 ", size: 8pt) +
+              text("Django", size: 8pt, weight: "black") +
+              text(", ", size: 8pt) +
+              text("React(TypeScript) ", size: 8pt, weight: "black") +
+              text("였습니다.\n", size: 8pt),
+              bottom: 2pt
+            )
+            bullet-item("스톡 이미지 및 영상 호스팅 서비스 유지보수")
+            bullet-item("영어 학원용 LMS(Learning Management System) 개발")
+            bullet-item("촬영 장비 및 교육 공간 대여 플랫폼 개발")
+          }
         ),
 
         work-entry(
@@ -202,7 +187,7 @@
         ),
 
         work-entry(
-          timeframe: "2020.05 – 2021.01, 2021.04 - 2021.11 (Includnig Part-time)",
+          timeframe: "2020.05 – 2021.01, 2021.04 - 2021.11",
           title: "Software Engineer",
           organization: "Petner Co.",
           location: "Seoul",
@@ -247,9 +232,49 @@
   ],
 )
 
-// ------------------------------------------------------------
-// 4. 페이지 ② — 프로젝트 & 커뮤니티
-// ------------------------------------------------------------
+// ──────────────────────────────────────────────
+// 2-Column 최적화: 동일한 이름의 헬퍼 재정의
+// ──────────────────────────────────────────────
+#let _header_row(left, right) = grid(
+  columns: (1fr, auto),
+  align: (start, end),
+  text(left, weight: "bold"),
+  text(right, style: "italic", size: 8pt),
+)
+
+#let project-entry(title: "", timeframe: "", summary: "", body: "", techstack: "") = stack(
+  spacing: 8pt,
+  _header_row(title, timeframe),
+  text(techstack, style: "italic", size: 7.5pt),
+  text(summary, size: 8pt),
+)
+
+#let contribution-entry(project, detail) = grid(
+  columns: (auto, 1fr),
+  column-gutter: 8pt,
+  text(project, weight: "semibold", size: 8.5pt),
+  text(detail, size: 8pt),
+)
+
+#let community-entry(role, timeframe, detail) = pad(
+  stack(
+    spacing: 8pt,
+    _header_row(role, timeframe),
+    detail, // 내부는 기존 bullet-item/text 그대로 사용
+  ),
+  bottom: 4pt
+)
+
+#let education-entry(major: "", institution: "", timeframe: "", body) = stack(
+  spacing: 8pt,
+  _header_row(institution, timeframe),
+  text(major, style: "italic", size: 8pt),
+  stack(body, spacing: 2pt),
+)
+
+// ──────────────────────────────────────────────
+// page2: 2-Column 레이아웃으로 재구성
+// ──────────────────────────────────────────────
 #let page2 = resume(
   theme: (
     font-size: 10pt,
@@ -265,147 +290,188 @@
     bottom: 28pt,
     left: 28pt,
     right: 28pt,
-    stack([
-    #section(
-      theme: (
-        space-above: 0pt,
-      ),
-      "Projects",
+    grid(
+      columns: 2,
+      column-gutter: 10pt,
+
+      // ─ Left Column ─
       stack(
         spacing: 12pt,
-        project-entry(
-          title: "Cosmoslide", 
-          summary: "슬라이드를 공유할 수 있는 페디버스 앱", 
-          timeframe: "2025.03 - Present", 
-          techstack: "Typescript, NestJS, Next.js, ActivityPub"),
-        project-entry(
-          title: "Python Korea Newsletter",
-          summary: "한국 파이썬 생태계의 저변을 넓히기 위한, 파이썬 사용자의, 파이썬 사용자에 의한, 파이썬 사용자를 위한 뉴스레터",
-          timeframe: "2025.03 - 2025.06",
-          techstack: "Python, Django"),
-        project-entry(
-          title: "Aladin IT Book Notifier", 
-          summary: "신간 IT 도서 텔레그램 알림 봇", 
-          timeframe: "2024.04", 
-          techstack: "Ruby, Rails"),
-        project-entry(
-          title: "Mastodon.nvim", 
-          summary: "Neovim용 Mastodon 플러그인", 
-          timeframe: "2022.12", 
-          techstack: "Lua, Neovim"),
-        project-entry(
-          title: "Mazassumnida",
-          summary: "Github 뱃지로 BOJ 티어 시각화, GitHub Star 600 달성", 
-          timeframe: "2020.08",
-          techstack: "Python, Django")
-      )
-    )
-    
-    #section(
-      theme: (space-above: 0pt),
-      "Education",
-      grid(
-        columns: 2,
-        column-gutter: default-theme.margin,
-        education-entry(
-          institution: "홍익대학교",
-          major: "컴퓨터공학 학사",
-          timeframe: "2012.03 – 2022.02",
-          {
-            bullet-item("게임 동아리 makE X Play 활동 " + text("(~ 2017. 02.)", style: "italic", size: 7pt)) 
-            bullet-item("알고리즘 학회 HI‑ARC 창설 멤버 및 2기 학회장")
-            bullet-item("Application Platform Lab 학부 연구원 " + text("(2017. 07. ~ 2018. 05.)", style: "italic", size: 7pt) + "")
-
-            set text(size: 8pt)
-            pad({
-              text("군휴학 ") + text("2014. 04. ~ 2016. 03.", size: 6pt) + " / " + text("개발 커리어 집중을 위한 휴학 ") + text("2018. 12. ~ 2021. 02.", size: 6pt)
-            }, top: 4pt)
-          },
+        section(
+          theme: (space-above: 0pt),
+          "Projects",
+          stack(
+            spacing: 10pt,
+            project-entry(
+              title: "Cosmoslide",
+              summary: "슬라이드를 공유할 수 있는 페디버스 앱",
+              timeframe: "2025.03 - Present",
+              techstack: "Typescript, NestJS, Next.js, ActivityPub",
+              body: ""
+            ),
+            project-entry(
+              title: "Aladin IT Book Notifier",
+              summary: "신간 IT 도서 텔레그램 알림 봇",
+              timeframe: "2024.04",
+              techstack: "Ruby, Rails",
+              body: ""
+            ),
+            project-entry(
+              title: "Mastodon.nvim",
+              summary: "Neovim용 Mastodon 플러그인",
+              timeframe: "2022.12",
+              techstack: "Lua, Neovim",
+              body: ""
+            ),
+            project-entry(
+              title: "Mazassumnida",
+              summary: "Github 뱃지로 BOJ 티어 시각화, GitHub Star 600 달성",
+              timeframe: "2020.08",
+              techstack: "Python, Django",
+              body: ""
+            ),
+          )
         ),
-      ),
-    )
+section(
+          theme: (space-above: 0pt),
+          "Contributions",
+          stack(
+            spacing: 10pt,
+            contribution-entry(
+              "Fedify " + underline(text(link("https://github.com/fedify-dev/fedify", "(github)"), weight: "thin", size: 6pt)),
+              "ActivityPub 기반의 서비스를 개발하기 위한 툴셋 — OSSCA 2025 리드멘티 " +
+              text(link("https://github.com/fedify-dev/fedify/pull/309", "#309"), size: 8pt)
+            ),
+            contribution-entry(
+              "Aider " + underline(text(link("https://github.com/Aider-AI", "(github)"), weight: "thin", size: 6pt)),
+              "LLM 기반 페어프로그래밍 에이전트 — Dart/Flutter 지원 추가 " +
+              text(link("https://github.com/Aider-AI/aider/pull/2236", "#2236"), size: 8pt)
+            ),
+            contribution-entry(
+              "tree-sitter-dart " + underline(text(link("https://github.com/UserNobody14/tree-sitter-dart", "(github)"), weight: "thin", size: 6pt)),
+              "tree-sitter 기반 dart language parser — tag query 지원 " +
+              text(link("https://github.com/UserNobody14/tree-sitter-dart/pull/77", "#77"), size: 8pt)
+            ),
+            contribution-entry(
+              "Django Girls Tutorial " + underline(text(link("https://tutorial.djangogirls.org/ko/", "(link)"), weight: "thin", size: 6pt)),
+              "입문 튜토리얼 한국어 번역 " +
+              text(link("https://github.com/DjangoGirls/tutorial/pull/1476", "#1476"), size: 8pt)
+            ),
+            contribution-entry(
+              "Elixir School " + underline(text(link("https://elixirschool.com/ko/", "(link)"), weight: "thin", size: 6pt)),
+              "한국어 번역 " +
+              text(link("https://github.com/elixirschool/elixirschool/pull/465", "#465"), size: 8pt) +
+              text(", ", size: 8pt) +
+              text(link("https://github.com/elixirschool/elixirschool/pull/467", "#467"), size: 8pt) +
+              text(", ", size: 8pt) +
+              text(link("https://github.com/elixirschool/elixirschool/pull/581", "#581"), size: 8pt) +
+              text(", ", size: 8pt) +
+              text(link("https://github.com/elixirschool/elixirschool/pull/623", "#623"), size: 8pt)
+            ),
+          )
+        ),
 
-    #section(
-      theme: (space-above: 0pt),
-      "Extracurricular Activities",
-        education-entry(
-          institution: "홍익대학교 알고리즘 학회 HI-ARC",
-          major: "홍익대학교",
-          timeframe: "2017.03 – 2021.02",
+      ),
+
+      // ─ Right Column ─
+      stack(
+        spacing: 12pt,
+        section(
+          theme: (space-above: 0pt),
+          "Education",
+          grid(
+            columns: 1,
+            column-gutter: default-theme.margin,
+            education-entry(
+              institution: "홍익대학교",
+              major: "컴퓨터공학 학사",
+              timeframe: "2012.03 – 2022.02",
+              {
+                bullet-item("게임 동아리 makE X Play 활동 " + text("(~ 2017. 02.)", style: "italic", size: 7pt))
+                bullet-item("알고리즘 학회 HI-ARC 창설 멤버 및 2기 학회장")
+                bullet-item("Application Platform Lab 학부 연구원 " + text("(2017. 07. ~ 2018. 05.)", style: "italic", size: 7pt) + "")
+                set text(size: 8pt)
+                pad({
+                  text("군휴학 ") + text("2014. 04. ~ 2016. 03.", size: 6pt) + " / " + text("개발 커리어 집중을 위한 휴학 ") + text("2018. 12. ~ 2021. 02.", size: 6pt)
+                }, top: 4pt)
+              },
+            ),
+          ),
+        ),        
+        section(
+          theme: (space-above: 10pt),
+          "Extracurricular Activities",
+          education-entry(
+            institution: "홍익대학교 알고리즘 학회 HI-ARC",
+            major: "홍익대학교",
+            timeframe: "2017.03 – 2021.02",
+            {
+              bullet-item("2기 학회장 및 스터디장 — 신입생 대상 알고리즘 강의·스터디 운영 " +
+                underline(link("https://www.slideshare.net/JaeyeolLee4", "(link)")))
+              bullet-item("제1회 홍익대 프로그래밍 경진대회 문제 출제 ('16)")
+              bullet-item("ACM-ICPC, UCPC, 카카오 코드 페스티벌 등 대회 참여")
+              bullet-item("서강대 ICPC 팀과 2020 겨울 연합 스터디(강의·문제 선정)")
+              bullet-item("신촌 지역 동아리 연합 ICPC Sinchon 여름 캠프 공동총괄")
+            }
+          )
+        ),
+
+        section(
+          theme: (space-above: 10pt),
+          "Community",
           {
-            bullet-item("2기 학회장 및 스터디장 — 신입생 대상 알고리즘 강의·스터디 운영 " + 
-underline(link( "https://www.slideshare.net/JaeyeolLee4", "(link)")))
-            bullet-item("제1회 홍익대 프로그래밍 경진대회 문제 출제 ('16)")
-            bullet-item("ACM‑ICPC, UCPC, 카카오 코드 페스티벌 등 대회 참여")
-            bullet-item("서강대 ICPC 팀과 2020 겨울 연합 스터디(강의·문제 선정)")
-            bullet-item("신촌 지역 동아리 연합 ICPC Sinchon 여름 캠프 공동총괄")
+            community-entry(
+              "Fedidev.kr 모더레이터 " + underline(text(link("https://fedidev.kr", "(link)"), weight: "thin", size: 8pt)),
+              "2024.01 – present",
+              stack(
+                spacing: 8pt,
+                bullet-item("ActivityPub 기반 Mastodon 등 분산 SNS 개발자 커뮤니티 운영"),
+                bullet-item("Hackers' Pub 오프라인 모임 Hackers' Public 주최 " + underline(text(link("https://public.hackers.pub", "(link)"), weight: "thin", size: 7pt))),
+                bullet-item("정기 스프린트 모임 기획·주최 " + underline(text(link("https://fedidev.kr", "(link)"), weight: "thin", size: 7pt))),
+                bullet-item("(UbuCon Korea 2025) '글로벌 OSS 개발자들은 왜 Fediverse에 모일까?' 발표")
+              )
+            )
 
-          
-          })
+            community-entry(
+              "Vim.kr 모더레이터 " + underline(text(link("https://vim.kr", "(link)"), weight: "thin", size: 8pt)),
+              "2023.01 - present",
+              stack(
+                spacing: 8pt,
+                text("한국어권 Vim/Neovim 사용자 Discord 커뮤니티(630+) 운영\n", size: 8pt),
+                text("Vim 관련 행사 2회 주최 및 발표 다수\n", size: 8pt),
+                bullet-item("(제 2회 엑셀콘) Neovim으로 생산성 퀀텀점프하기"),
+                bullet-item("Vim 어디까지 알고 있니?"),
+                bullet-item("(VimEnter 2023) Neovim으로 생산성 퀀텀점프하기"),
+                bullet-item("(NeovimConf.live 2024) You don’t need plugin, long live the command line"),
+                bullet-item("(UbuCon Korea 2025) 2025 우분투 환경에서의 에디터 그리고 미래")
+              )
+            )
+
+            community-entry(
+              "PyCon KR 준비위원회",
+              "2018.10 – 2020.10",
+              bullet-item("PyCon KR 2019·2020 및 격월 세미나 기획·운영")
+            )
+
+            community-entry(
+              "Django Girls Seoul 코치",
+              "2018.08, 2019.08",
+              bullet-item("여성을 위한 무료 프로그래밍 워크숍, Django Girls Seoul에서 코치로 활동")
+            )
+            community-entry(
+              "etc",
+              "",
+              bullet-item("(PyCon Korea 2025) Aider와 함께하는 AI-driven pair programming 발표")
+            )
+          }
+        ),
+
         
-    )
-
-    #section(
-      theme: (
-        space-above: 0pt,
+        
       ),
-      "Community",
-      {
-    // ─ Fedidev.kr ───────────────────────────────
-    community-entry("Fedidev.kr 모더레이터" + " " + underline(text(link("https://fedidev.kr", "(link)"), weight: "thin", size: 8pt)), "2024.01 – present", {
-      bullet-item("ActivityPub 기반 Mastodon·PixelFed 등 분산 SNS 개발자 커뮤니티 운영")
-      bullet-item("정기 스프린트 모임 기획·주최 " + underline(text(link("https://fedidev.kr", "(link)"), weight: "thin", size: 7pt)))
-      
-    })
-
-    // ─ Vim.kr ───────────────────────────────────
-    community-entry("Vim.kr 모더레이터" + " " + underline(text(link("https://vim.kr", "(link)"), weight: "thin", size: 8pt)), "2023.01 - present", {
-      text("한국어권 Vim/Neovim 사용자 Discord 커뮤니티(630+) 운영\n", size: 8pt)
-      text("Vim 관련 행사 2회 주최 및 발표 다수\n", size: 8pt)
-      bullet-item("(제 2회 엑셀콘) Neovim으로 생산성 퀀텀점프하기", indent-level: 0)
-      bullet-item("Vim 어디까지 알고 있니?", indent-level: 0)
-      bullet-item("(VimEnter 2023) Neovim으로 생산성 퀀텀점프하기", indent-level: 0)
-      bullet-item("(NeovimConf.live) You don’t need plugin, long live the command line", indent-level: 0)
-    })
-    
-    // ─ PyCon KR ─────────────────────────────────
-    community-entry("PyCon KR 준비위원회", "2018.10 – 2020.10", {
-      bullet-item("PyCon KR 2019·2020 및 격월 세미나 기획·운영")
-    })
-
-    // ─ Django Girls ─────────────────────────────
-    community-entry("Django Girls Seoul 코치", "2018.08, 2019.08", {
-      bullet-item("여성을 위한 무료 프로그래밍 워크숍, Django Girls Seoul에서 코치로 활동")
-    })
-      }
     )
-
-    #section(
-      theme: (
-        space-above: 0pt,
-      ),
-      "Contributions",
-      {
-          contribution-entry("Fedify " + underline(text(link("https://github.com/fedify-dev/fedify", "(github)"), weight: "thin", size: 6pt)), 
-          "ActivityPub 기반의 서비스를 개발하기 위한 툴셋을 제공하는 프레임워크. OSSCA 2025 리드멘티로 활동" + text(link("https://github.com/fedify-dev/fedify/pull/309", " #309"), size: 6pt))
-        contribution-entry("Aider " + underline(text(link("https://github.com/Aider-AI", "(github)"), weight: "thin", size: 6pt)), 
-          "LLM 기반의 페어프로그래밍 에이전트 (Dart/Flutter 개발 지원 추가)" + text(link("https://github.com/Aider-AI/aider/pull/2236", " #2236"), size: 6pt))
-        contribution-entry("tree-sitter-dart "  + underline(text(link("https://github.com/UserNobody14/tree-sitter-dart", "(github)"), weight: "thin", size: 6pt)), 
-          "tree-sitter 기반의 dart language parser 구현체 (tag query 지원)" + text(link("https://github.com/UserNobody14/tree-sitter-dart/pull/77", " #77"), size: 6pt) )
-        contribution-entry("Django Girls Tutorial "  + underline(text(link("https://tutorial.djangogirls.org/ko/", "(link)"), weight: "thin", size: 6pt)), 
-          "Django에 입문하는 여성개발자를 위한 튜토리얼 (한국어 번역)" + text(link("https://github.com/DjangoGirls/tutorial/pull/1476", " #1476"), size: 6pt))
-        contribution-entry("Elixir School "  + underline(text(link("https://elixirschool.com/ko/", "(link)"), weight: "thin", size: 6pt)), 
-          "Elixir를 쉽게 입문하기 위한 튜토리얼 (한국어 번역)" 
-          + text(link("https://github.com/elixirschool/elixirschool/pull/465", " #465"), size: 6pt)
-          + text(link("https://github.com/elixirschool/elixirschool/pull/467", " #467"), size: 6pt)
-          + text(link("https://github.com/elixirschool/elixirschool/pull/581", " #581"), size: 6pt)
-          + text(link("https://github.com/elixirschool/elixirschool/pull/623", " #623"), size: 6pt)
-        )          
-      },
-    )
-  ])),
+  ),
 )
-
 
 #let page3 = resume(
   theme: (
