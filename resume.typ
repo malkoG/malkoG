@@ -6,7 +6,7 @@
 // ------------------------------------------------------------
 // 1. 커스텀 헬퍼
 // ------------------------------------------------------------
-#let bullet-item(txt, indent-level: 0) = text(indent-level * "    " +  "• " + txt + "\n", size: 8pt)
+#let bullet-item(txt, indent-level: 0) = text(indent-level * " " +  "• " + txt + "\n", size: 8pt)
 
 
 #let work-entry(timeframe: "", title: "", organization: "", location: "", body) = {
@@ -56,13 +56,13 @@
       "Contact",
       {
         set image(width: 8pt)
-        contact-entry(github-icon, link("https://github.com/malkoG", "malkoG"))
+        contact-entry(github-icon, link("https://github.com/malkoG", "github.com/malkoG"))
         line(stroke: 0.1pt, length: 100%)
         contact-entry(phone-icon,  link("tel:+82-xx-xxx-xxxx", "xxx-xxxx-xxxx"))
         line(stroke: 0.1pt, length: 100%)
         contact-entry(email-icon,  link("mailto:jaeyeol.lee@hey.com", "jaeyeol.lee@hey.com"))
         line(stroke: 0.1pt, length: 100%)
-        contact-entry(email-icon,  link("https://acmicpc.net/user/malkoring", "BOJ: malkoring"))
+        contact-entry("\u{1F310}",  link("https://hackers.pub/@kodingwarrior", "@kodingwarrior@hackers.pub"))
       },
     )
 
@@ -128,11 +128,11 @@
           location: "Seoul",
           {
             pad(text("아이디어를 제품으로 빠르게 전환하는 2인 풀스택 개발 에이전시 Team Milestone에서 근무했습니다.", size: 8pt), bottom: 0pt)
-            pad(text("Ruby On Rails 기반의 소프트웨어 유지보수\n", weight: "light", size: 8pt), top: -0pt, bottom: 1pt)
+            pad(text("Ruby On Rails 기반의 소프트웨어 유지보수\n", weight: "light", size: 8pt), top: -0pt, bottom: 0pt)
             bullet-item("서울 소재 대학교 LMS 플랫폼(Canvas LMS 기반) 유지보수")
             bullet-item("유튜브 크리에이터 정산 관리 플랫폼 유지보수")
             bullet-item("헤이그라운드 대관 서비스 유지보수")
-            pad(text("Node.js/Ruby On Rails/Flutter 기반의 소프트웨어 위탁개발\n", weight: "light", size: 8pt), top: 2pt, bottom: 1pt)
+            pad(text("Node.js/Ruby On Rails/Flutter 기반의 소프트웨어 위탁개발\n", weight: "light", size: 8pt), top: 1pt, bottom: 0pt)
             
             bullet-item("식단 관리를 위한 배달 앱 퍼블리싱")
             bullet-item("농수산물 이커머스 플랫폼 개발")
@@ -141,7 +141,7 @@
             bullet-item("동물병원 예약 서비스 앱 개발(스태프·고객 전용)")
             bullet-item("운동선수 식단관리 플랫폼 개발")
             bullet-item("뷰티 매장을 위한 CRM 솔루션 개발")
-            pad(text("Team Milestone 내부 개발 프로세스 개선\n", weight: "light", size: 8pt), top: 2pt, bottom: 1pt)
+            pad(text("Team Milestone 내부 개발 프로세스 개선\n", weight: "light", size: 8pt), top: 1pt, bottom: 0pt)
             
             bullet-item("Capistrano 기반의 배포 방식에서 kamal 기반의 배포 방식으로 전환")
             bullet-item("운영환경 구축부터 배포까지 드는 시간을 5시간에서 1시간으로 개선", indent-level: 1)
@@ -167,6 +167,7 @@
             )
             bullet-item("스톡 이미지 및 영상 호스팅 서비스 유지보수")
             bullet-item("영어 학원용 LMS(Learning Management System) 개발")
+            bullet-item("전자책 대여 서비스 유지보수 (Spring + React)")
             bullet-item("촬영 장비 및 교육 공간 대여 플랫폼 개발")
           }
         ),
@@ -246,12 +247,19 @@
   spacing: 8pt,
   _header_row(title, timeframe),
   text(techstack, style: "italic", size: 7.5pt),
-  text(summary, size: 8pt),
+  if (body == "") {
+    text(summary, size: 8pt)
+  } else {
+    stack(
+      spacing: 8pt,
+      text(summary, size: 8pt),
+      body,
+    )
+  },
 )
 
-#let contribution-entry(project, detail) = grid(
-  columns: (auto, 1fr),
-  column-gutter: 8pt,
+#let contribution-entry(project, detail) = stack(
+  spacing: 8pt,
   text(project, weight: "semibold", size: 8.5pt),
   text(detail, size: 8pt),
 )
@@ -301,73 +309,150 @@
           theme: (space-above: 0pt),
           "Projects",
           stack(
-            spacing: 10pt,
+            spacing: 14pt,
             project-entry(
-              title: "Cosmoslide",
-              summary: "슬라이드를 공유할 수 있는 페디버스 앱",
-              timeframe: "2025.03 - Present",
+              title: "Cosmoslide " + underline(text(link("https://github.com/cosmoslide/cosmoslide", "github.com/cosmoslide/cosmoslide"), weight: "thin", size: 6pt)),
+              summary: "ActivityPub 기반의 연합우주 생태계를 위한 슬라이드 공유 플랫폼",
+              timeframe: "2025.07 - Present",
               techstack: "Typescript, NestJS, Next.js, ActivityPub",
-              body: ""
+              body: stack(
+                spacing: 8pt,
+                bullet-item(
+                  indent-level: 1,
+                  "Mac Mini 서버에서 운영 (" + underline(link("https://v1.cosmosli.de", "v1.cosmosli.de")) + ")"
+                ),
+                bullet-item(
+                  indent-level: 3,
+                  "Caddy를 리버스 프록시로 활용하며, docker-compose 기반으로 배포"
+                ),
+                bullet-item(
+                  indent-level: 1,
+                  "ActivityPub 기반 다른 서비스와의 호환성 제공 " + text("(Mastodon, Hackers' Pub 등)", size: 6pt)
+                )
+              )
             ),
             project-entry(
-              title: "Aladin IT Book Notifier",
+              title: "개인 블로그 운영 " + underline(text(link("https://kodingwarrior.github.io", "kodingwarrior.github.io"), weight: "thin", size: 6pt)),
+              summary: "Ruby 기반의 정적사이트 생성기 Bridgetown 기반으로 개인 블로그 운영",
+              timeframe: "2022.03 ~ Present",
+              techstack: "Ruby, Javascript",
+              body: stack(
+                spacing: 8pt,
+                bullet-item(indent-level: 1, "telekasten.nvim과 호환되는 PKM 시스템 구축 (내부링크 및 시각화 지원)"),
+                bullet-item(indent-level: 1, "Hackers' Pub 기반의 정적 컨텐츠 자동 생성 지원")
+              )
+            ),
+            project-entry(
+              title: "Aladin IT Book Notifier " + underline(text(link("https://t.me/@aladin_itbook_notifier", "t.me/@aladin_itbook_notifier"), weight: "thin", size: 6pt)),
               summary: "신간 IT 도서 텔레그램 알림 봇",
               timeframe: "2024.04",
               techstack: "Ruby, Rails",
               body: ""
             ),
             project-entry(
-              title: "Mastodon.nvim",
+              title: "Mastodon.nvim " + underline(text(link("https://github.com/kode-team/mastodon.nvim", "github.com/kode-team/mastodon.nvim"), weight: "thin", size: 6pt)),
               summary: "Neovim용 Mastodon 플러그인",
               timeframe: "2022.12",
               techstack: "Lua, Neovim",
               body: ""
             ),
             project-entry(
-              title: "Mazassumnida",
-              summary: "Github 뱃지로 BOJ 티어 시각화, GitHub Star 600 달성",
+              title: "Mazassumnida " + underline(text(link("https://github.com/mazassumnida/mazassumnida", "github.com/mazassumnida/mazassumnida"), weight: "thin", size: 6pt)),
+              summary: "BOJ 티어를 시각화하는 GitHub 뱃지, GitHub Star 600 달성",
               timeframe: "2020.08",
               techstack: "Python, Django",
               body: ""
             ),
           )
         ),
-section(
-          theme: (space-above: 0pt),
+        section(
+          theme: (space-above: 10pt),
           "Contributions",
           stack(
-            spacing: 10pt,
+            spacing: 14pt,
             contribution-entry(
-              "Fedify " + underline(text(link("https://github.com/fedify-dev/fedify", "(github)"), weight: "thin", size: 6pt)),
-              "ActivityPub 기반의 서비스를 개발하기 위한 툴셋 — OSSCA 2025 리드멘티 " +
-              text(link("https://github.com/fedify-dev/fedify/pull/309", "#309"), size: 8pt)
+              "Hackers' Pub " + underline(text(link("https://github.com/hackers-pub/hackerspub", "github.com/hackers-pub/hackerspub"), weight: "thin", size: 6pt)),
+              stack(
+                spacing: 8pt,
+                text("ActivityPub 프로토콜 호환되는 연합우주 생태계의 블로깅 플랫폼", size: 8pt),
+                bullet-item(
+                  indent-level: 1, 
+                  "초안 저장 표시자 "
+                  + 
+                  text(link("https://github.com/hackers-pub/hackerspub/pull/5", "#5"), size: 7pt, fill: red)
+                  + 
+                  ", "
+                  +
+                  "초대장 메일 발송 오류 수정 "
+                  + 
+                  text(link("https://github.com/hackers-pub/hackerspub/pull/138", "#138"), size: 7pt, fill: red)
+                  +
+                  " 등 UX 개선 작업"
+                ),
+                bullet-item(
+                  indent-level: 1,
+                  "가입자 수를 늘리기 위한 바이럴 활동 " +
+                  text("(2025-10-16 기준, 677명 중 257명 초대)", size: 7pt)
+                ),
+                bullet-item(
+                  indent-level: 1,
+                  "Hackers’ Pub 기반 정적 사이트 생성기(SSG) 연동 예제 제작 "
+                  + underline(text(link("https://github.com/kodingwarrior-hackerspub/kodingwarrior-hackerspub.github.io", "(예제 저장소)"), size: 7pt))
+                ),
+                
+                bullet-item(
+                  indent-level: 3,
+                  "GraphQL API를 응용해 정적 컨텐츠가 자동 생성되도록 구조 설계"
+                )
+              )
             ),
             contribution-entry(
-              "Aider " + underline(text(link("https://github.com/Aider-AI", "(github)"), weight: "thin", size: 6pt)),
+              "Fedify " + underline(text(link("https://github.com/fedify-dev/fedify", "github.com/fedify-dev/fedify"), weight: "thin", size: 6pt)),
+              stack(
+                spacing: 8pt,
+                par(
+                  leading: 8pt,
+                  "Node.js/Deno/Bun 등의 Javascript 웹 서버 프레임워크에서 ActivityPub 기반의 서비스를 개발하기 위한 유틸리티를 제공해주는 미들웨어"
+                ),
+                bullet-item(indent-level: 1, "2025년도 OSSCA 과정에서 리드멘티로 활동"),
+                bullet-item(
+                  indent-level: 1,
+                  "Nest.JS 통합 지원 (" 
+                  + text(link("https://github.com/fedify-dev/fedify/pull/309", "#309"), size: 8pt, fill: red)
+                  + ", "
+                  + text(link("https://github.com/fedify-dev/fedify/pull/386", "#386"), size: 8pt, fill: red) + ") 및 예제 프로젝트 개발(cosmoslide)",
+                ),
+              )
+            ),
+            contribution-entry(
+              "Aider " + underline(text(link("https://github.com/Aider-AI/aider", "github.com/Aider-AI/aider)"), weight: "thin", size: 6pt)),
               "LLM 기반 페어프로그래밍 에이전트 — Dart/Flutter 지원 추가 " +
-              text(link("https://github.com/Aider-AI/aider/pull/2236", "#2236"), size: 8pt)
+              text(link("https://github.com/Aider-AI/aider/pull/2236", "#2236"), size: 8pt, fill: red)
             ),
             contribution-entry(
-              "tree-sitter-dart " + underline(text(link("https://github.com/UserNobody14/tree-sitter-dart", "(github)"), weight: "thin", size: 6pt)),
+              "tree-sitter-dart " + underline(text(link("https://github.com/UserNobody14/tree-sitter-dart", "github.com/UserNobody14/tree-sitter-dart"), weight: "thin", size: 6pt)),
               "tree-sitter 기반 dart language parser — tag query 지원 " +
-              text(link("https://github.com/UserNobody14/tree-sitter-dart/pull/77", "#77"), size: 8pt)
+              text(link("https://github.com/UserNobody14/tree-sitter-dart/pull/77", "#77"), size: 8pt, fill: red)
             ),
             contribution-entry(
-              "Django Girls Tutorial " + underline(text(link("https://tutorial.djangogirls.org/ko/", "(link)"), weight: "thin", size: 6pt)),
-              "입문 튜토리얼 한국어 번역 " +
-              text(link("https://github.com/DjangoGirls/tutorial/pull/1476", "#1476"), size: 8pt)
+              "Django Girls Tutorial " + underline(text(link("https://tutorial.djangogirls.org/ko", "tutorial.djangogirls.org/ko"), weight: "thin", size: 6pt)),
+              stack(
+                "django 1.1 기준의 튜토리얼을 django 2.0 기준으로 업데이트 " +
+                text(link("https://github.com/DjangoGirls/tutorial/pull/1476", "#1476"), size: 8pt, fill: red)
+              )
             ),
             contribution-entry(
-              "Elixir School " + underline(text(link("https://elixirschool.com/ko/", "(link)"), weight: "thin", size: 6pt)),
-              "한국어 번역 " +
-              text(link("https://github.com/elixirschool/elixirschool/pull/465", "#465"), size: 8pt) +
+              "Elixir School " + underline(text(link("https://elixirschool.com/ko/", "elixirschool.com/ko"), weight: "thin", size: 6pt)),
+              "Elixir 입문자들을 위한 튜토리얼 한국어 번역 " +
+              text(link("https://github.com/elixirschool/elixirschool/pull/465", "#465"), size: 8pt, fill: red) +
               text(", ", size: 8pt) +
-              text(link("https://github.com/elixirschool/elixirschool/pull/467", "#467"), size: 8pt) +
+              text(link("https://github.com/elixirschool/elixirschool/pull/467", "#467"), size: 8pt, fill: red) +
               text(", ", size: 8pt) +
-              text(link("https://github.com/elixirschool/elixirschool/pull/581", "#581"), size: 8pt) +
+              text(link("https://github.com/elixirschool/elixirschool/pull/581", "#581"), size: 8pt, fill: red) +
               text(", ", size: 8pt) +
-              text(link("https://github.com/elixirschool/elixirschool/pull/623", "#623"), size: 8pt)
+              text(link("https://github.com/elixirschool/elixirschool/pull/623", "#623"), size: 8pt, fill: red)
             ),
+            
           )
         ),
 
@@ -438,12 +523,12 @@ section(
               stack(
                 spacing: 8pt,
                 text("한국어권 Vim/Neovim 사용자 Discord 커뮤니티(630+) 운영\n", size: 8pt),
-                text("Vim 관련 행사 2회 주최 및 발표 다수\n", size: 8pt),
+                text("Vim 관련 행사 3회 주최 및 발표 다수\n", size: 8pt),
                 bullet-item("(제 2회 엑셀콘) Neovim으로 생산성 퀀텀점프하기"),
-                bullet-item("Vim 어디까지 알고 있니?"),
-                bullet-item("(VimEnter 2023) Neovim으로 생산성 퀀텀점프하기"),
+                bullet-item("(튜링의 사과 초청 강연) Vim 어디까지 알고 있니?"),
+                bullet-item("(VimEnter 2023) Neovim으로 생산성 퀀텀점프하기 pt.2"),
                 bullet-item("(NeovimConf.live 2024) You don’t need plugin, long live the command line"),
-                bullet-item("(UbuCon Korea 2025) 2025 우분투 환경에서의 에디터 그리고 미래")
+                bullet-item("(UbuCon Korea 2025) 2025 우분투 환경에서의 에디터 그리고 미래"),
               )
             )
 
