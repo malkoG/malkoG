@@ -16,7 +16,7 @@
 
 [![Recommendation](https://referral.akaiaoon.dev/u/malkoG?v=3)](https://referral.akaiaoon.dev)
 
-[![Star History Chart](https://api.star-history.com/svg?repos=kode-team/mastodon.nvim,balpan-rs/balpan&type=Date)](https://star-history.com/#kode-team/mastodon.nvim&balpan-rs/balpan&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=kode-team/mastodon.nvim,hackers-pub/android,moim-social/moim&type=Date)](https://star-history.com/#kode-team/mastodon.nvim&hackers-pub/android,moim-social/moim&Date)
 
 ### Skills
 
